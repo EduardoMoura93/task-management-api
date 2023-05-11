@@ -13,7 +13,7 @@
   "department": "Financeiro"
 }</code></pre>
   </li>
-  <li>Response:
+  <li>Response:\
     <pre><code>{
   "message": "Cadastro realizado com sucesso."
 }</code></pre>
@@ -96,60 +96,72 @@
     "completed": false
   }
 ]
-
-Claro, aqui está a versão com formatação HTML:
-
-<h2>GET: buscar todas as pessoas</h2>
-<p>endpoint: 127.0.0.1:8098/v1/person</p>
-<pre>
-response: [
-	{
-		"name": "Eduardo",
-		"department": "TI",
-		"totalHoursOnTasks": "00:00"
-	},
-	{
-		"name": "Bel",
-		"department": "Comercial",
-		"totalHoursOnTasks": "02:39"
-	}
-]
-</pre>
-<h2>GET: buscar pessoa por nome e periodo</h2>
-<p>endpoint: 127.0.0.1:8098/v1/person/average-hours</p>
-<h3>Request:</h3>
-<ul>
-	<li>QueryParametro: name (Eduardo)</li>
-	<li>QueryParametro: startDate (2023-05-10)</li>
-	<li>QueryParametro: endDate (2023-05-11)</li>
+</code></pre>
+</li>
 </ul>
-<h3>Response:</h3>
-<pre>
-{
-	"name": "Bel",
-	"department": "Comercial",
-	"averageHours": "01:19"
-}
-</pre>
-<h2>Delete: deletar pessoa por id</h2>
-<p>127.0.0.1:8098/v1/person/1</p>
-<pre>
-response: {
-	"message": "Cadastro deletado com sucesso."
-}
-</pre>
-<h2>Update: atualizar pessoa</h2>
-<p>127.0.0.1:8098/v1/person/2</p>
-<h3>request:</h3>
-<pre>
-{
-	"name": "Eduardo",
-	"department": "TI"
-}
-</pre>
-<h3>response:</h3>
-<pre>
-{
-	"message": "Cadastro atualizado com sucesso."
-}
-</pre>
+
+
+<h2>Buscar todas as pessoas</h2>
+<ul>
+  <li>Método HTTP: GET</li>
+  <li>Endpoint: <code>127.0.0.1:8098/v1/person</code></li>
+  <li>Response:
+    <pre><code>[
+  {
+    "name": "Eduardo",
+    "department": "TI",
+    "totalHoursOnTasks": "00:00"
+  },
+  {
+    "name": "Bel",
+    "department": "Comercial",
+    "totalHoursOnTasks": "02:39"
+  }
+]</code></pre>
+  </li>
+</ul>
+<h2>Buscar pessoa por nome e período</h2>
+<ul>
+  <li>Método HTTP: GET</li>
+  <li>Endpoint: <code>127.0.0.1:8098/v1/person/average-hours?name=Eduardo&amp;startDate=2023-05-10&amp;endDate=2023-05-11</code></li>
+  <li>Request:
+    <ul>
+      <li>QueryParametro: name (Eduardo)</li>
+      <li>QueryParametro: startDate (2023-05-10)</li>
+      <li>QueryParametro: endDate (2023-05-11)</li>
+    </ul>
+  </li>
+  <li>Response:
+    <pre><code>{
+  "name": "Bel",
+  "department": "Comercial",
+  "averageHours": "01:19"
+}</code></pre>
+  </li>
+</ul>
+<h2>Deletar pessoa por ID</h2>
+<ul>
+  <li>Método HTTP: DELETE</li>
+  <li>Endpoint: <code>127.0.0.1:8098/v1/person/1</code></li>
+  <li>Response:
+    <pre><code>{
+  "message": "Cadastro deletado com sucesso."
+}</code></pre>
+  </li>
+</ul>
+<h2>Atualizar pessoa</h2>
+<ul>
+  <li>Método HTTP: PUT</li>
+  <li>Endpoint: <code>127.0.0.1:8098/v1/person/2</code></li>
+  <li>Request:
+    <pre><code>{
+  "name": "Eduardo",
+  "department": "TI"
+}</code></pre>
+  </li>
+  <li>Response:
+    <pre><code>{
+  "message": "Cadastro atualizado com sucesso."
+}</code></pre>
+  </li>
+</ul>
