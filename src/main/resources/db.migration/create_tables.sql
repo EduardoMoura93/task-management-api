@@ -11,9 +11,10 @@ CREATE TABLE task (
     description TEXT,
     deadline DATETIME,
     department VARCHAR(255),
-    duration VARCHAR(255),
+    duration BIGINT,
     assigned_person_id BIGINT,
     completed BOOLEAN,
+    completed_date DATETIME,
     PRIMARY KEY (id),
     CONSTRAINT fk_assigned_person FOREIGN KEY (assigned_person_id) REFERENCES person(id) ON DELETE CASCADE
 );

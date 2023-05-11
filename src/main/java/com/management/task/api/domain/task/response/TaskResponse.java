@@ -1,5 +1,6 @@
-package com.management.task.api.domain.task.model;
+package com.management.task.api.domain.task.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.management.task.api.domain.person.model.PersonModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,42 +12,16 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@DynamicUpdate
-@SuperBuilder
-@Table(name = "task")
-public class TaskModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class TaskResponse {
     private Long id;
-
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "description")
     private String description;
-
-    @Column(name = "deadline")
     private LocalDateTime deadline;
-
-    @Column(name = "department")
     private String department;
-
-    @Column(name = "duration")
     private Long duration;
-
-    @ManyToOne
-    @JoinColumn(name = "assigned_person_id")
-    private PersonModel assignedPerson;
-
-    @Column(name = "completed")
     private Boolean completed;
-
-    @Column(name = "completed_date")
     private LocalDateTime completedDate;
 }

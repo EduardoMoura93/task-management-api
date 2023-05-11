@@ -13,6 +13,10 @@ public class PersonValidator {
     private final PersonRepository repository;
 
     public PersonModel validatorById(Long personId){
-        return repository.findById(personId).orElseThrow(() -> new IllegalArgumentException(PERSON_NOT_FOUND + personId));
+        return repository.findById(personId).orElseThrow(() -> new IllegalArgumentException(PERSON_NOT_FOUND));
+    }
+
+    public PersonModel validatorByName(String name){
+        return repository.findByName(name).orElseThrow(() -> new IllegalArgumentException(PERSON_NOT_FOUND));
     }
 }
